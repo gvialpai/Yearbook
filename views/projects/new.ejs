@@ -5,9 +5,9 @@
     <input type="text" name="project[description]" placeholder="Enter a description">
     <input type="text" name="project[photo_url]" placeholder="Enter a photo_url">
     <input type="text" name="project[link]" placeholder="Enter a link">
-    <select>
+    <select name="user[id]"> 
       <% users.forEach(function(value){ %>
-      <option value="<%= value.name %>"><%= value.name %></option>
+      <option value="<%= value.id %>"><%= value.name %></option>
       <% }) %>
 
     </select>

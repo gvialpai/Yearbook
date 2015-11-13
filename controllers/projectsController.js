@@ -16,15 +16,20 @@ function projectsNew(req, res){
 }
 
 function projectsCreate(req, res){
-  var project_params = req.body.project;
-  var project = new Project(project_params);
-  console.log(project_params);
+  var projectParams = req.body.project;
+  var project = new Project(projectParams);
+  console.log(projectParams);
   project.save(function(err){
     if (err) return res.render("error", {message: "Something went wrong" + err });
+    var id = req.body.user.id;
+    User.findById(id, function(err, user){
+       var projectArray = user.projects;
+       projectArray.push(projectParams);
+       user.save()
+    })
+    return res.redirect('projects', { message: "project was created"})
   })
 }
-
-
 
 function projectsShow(req, res){
   var id = req.params.id;
