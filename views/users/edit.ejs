@@ -1,0 +1,9 @@
+<div class="container">
+<h1>Edit User</h1>
+  <form method="post" action="/users/<%= user.id %>">
+    <input type="hidden" name="_method" value="patch">
+    <input type="text" name="user[class_name]" placeholder="Edit Class Name" value="<%= user.class_name %>">
+    <input type="text" name="user[photo_url]" placeholder="Enter photo url" value="<%= user.photo_url %>">
+    <input type="text" name="user[tag_line]" placeholder="Enter a tag line" value="<%= user.tag_line %>">
+    <button class="btn">Uptade</button>
+</div>

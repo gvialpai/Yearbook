@@ -1,0 +1,16 @@
+<div class="container">
+<h1><%= user.name %></h1>
+<ul>
+  <li>Class: <%= user.class_name %></li>
+  <li><%= user.photo_url %></li>
+  <li><%= user.tag_line %></li>
+  <li><%= user.projects %></li>
+
+
+</ul>
+<a href="/users/<%= user._id %>/edit" class="btn">Edit</a>
+<form method="post" action="/users/<%= user.id %> ">
+<input type="hidden" name="_method" value="delete">
+<button class="btn">Delete</button>
+ <a href="/users" class="btn">Back</a>
+ </div>
